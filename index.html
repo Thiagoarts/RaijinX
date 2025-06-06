@@ -10,27 +10,44 @@
 
   <!-- Swiper CSS (caso use o carrossel) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
+  <link rel="stylesheet" href="style/style.css">
 
   <!-- Swiper JS (deixe no final do body se preferir) -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body class="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('Image/background.png');">
 
   <!-- Navbar -->
-<nav class="flex items-center justify-between px-6 py-4 bg-transparent shadow-lg text-yellow-400">
-  <!-- Logo à esquerda -->
-  <div class="text-yellow-400 text-2xl font-bold">RaijinX</div>
+<!-- Navbar -->
+<nav class="flex items-center justify-between px-6 py-4 bg-transparent shadow-lg text-yellow-400 flex-wrap">
+  <!-- Título -->
+  <div class="text-yellow-400 text-2xl font-bold">
+    RaijinX
+  </div>
 
-  <!-- Menu e Busca à direita -->
-  <div class="flex items-center space-x-8">
+  <!-- Container do botão e busca no mobile -->
+  <div class="flex items-center space-x-3 md:hidden">
+    <!-- Barra de busca mobile -->
+    <input type="text" placeholder="Buscar..."
+      class="px-2 py-1 w-28 rounded bg-yellow-100 text-black text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+
+    <!-- Botão hamburguer -->
+    <button id="menuBtn" class="text-yellow-400 text-3xl focus:outline-none">
+      &#9776;
+    </button>
+  </div>
+
+  <!-- Menu Desktop (aparece só em telas maiores) -->
+  <div class="hidden md:flex md:items-center md:space-x-8 w-full md:w-auto mt-4 md:mt-0">
     <ul class="flex space-x-8 items-center">
       <li class="relative">
         <button onclick="toggleDropdown()" class="hover:text-gray-400 transition duration-300">
           Comic List ▾
         </button>
-        <ul id="dropdownMenu" class="absolute hidden text-black bg-yellow-400 mt-2 rounded-lg shadow-lg w-40 z-10">
+        <ul id="dropdownMenu"
+          class="absolute hidden text-black bg-yellow-400 mt-2 rounded-lg shadow-lg w-40 z-10">
           <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Drama</a></li>
           <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Terror</a></li>
           <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Comédia</a></li>
@@ -43,45 +60,387 @@
       <li><a href="#" class="hover:text-yellow-300 transition duration-300">Contact us</a></li>
     </ul>
 
-    <!-- Lupa e Campo de Busca -->
-    <div class="relative">
-      <input type="text" placeholder="Buscar..." class="pl-10 pr-4 py-2 rounded-lg bg-yellow-100 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-      <svg class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+    <!-- Barra de busca para desktop -->
+    <div class="relative ml-6">
+      <input type="text" placeholder="Buscar..."
+        class="pl-10 pr-4 py-2 rounded-lg bg-yellow-100 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+      <svg class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600" xmlns="http://www.w3.org/2000/svg"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
       </svg>
     </div>
   </div>
 </nav>
 
+<!-- MENU MOBILE -->
+<div id="mobileMenu" class="fixed inset-0 bg-black/70 backdrop-blur-md text-yellow-400 p-6 z-50 hidden flex-col items-center justify-center md:hidden">
+  <button onclick="closeMenu()" class="absolute top-4 right-4 text-3xl text-white">&times;</button>
+
+  <ul class="space-y-6 text-xl text-center mt-12">
+    <li><a href="#">Comic List</a></li>
+    <li><a href="#">Games</a></li>
+    <li><a href="#">Popular</a></li>
+    <li><a href="#">Contact us</a></li>
+  </ul>
+</div>
+
+
+
+
 
   <!-- Conteúdo da página (pode adicionar conteúdo aqui) -->
   <main class="flex-grow p-4">
     <!-- Swiper Carrossel -->
-<div class="swiper mySwiper mt-8 w-full max-w-5xl mx-auto rounded-xl overflow-hidden">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <img src="Image/tbate/crunch.png" class="w-full h-70 object-cover" />
-    </div>
-    <div class="swiper-slide">
-      <img src="Image/onepiece/Capa_banner.webp" class="w-full h-70 object-cover" />
-    </div>
-    <div class="swiper-slide">
-      <img src="https://source.unsplash.com/800x400/?anime,3" class="w-full h-70 object-cover" />
-    </div>
-  </div>
-  <!-- Botões -->
-  <div class="swiper-button-next text-white"></div>
-  <div class="swiper-button-prev text-white"></div>
-  <!-- Paginação -->
-  <div class="swiper-pagination"></div>
-</div>
+    <div class="swiper mySwiper mt-8 w-full max-w-7xl mx-auto rounded-xl overflow-hidden relative aspect-[16/9]">
+      <div class="swiper-wrapper h-full">
+        <div class="swiper-slide h-full">
+          <img src="Image/tbate/crunch.png" class="w-full h-full object-cover" />
+        </div>
+        <div class="swiper-slide h-full">
+          <img src="Image/onepiece/banner_robin.png" class="w-full h-full object-cover" />
+        </div>
+        <div class="swiper-slide h-full">
+          <img src="Image/SagaofTanyatheEvil/803896.png" class="w-full h-full object-cover" />
+        </div>
+      </div>
 
+      <!-- Botões personalizados dentro da imagem -->
+      <div
+        class="swiper-button-prev absolute top-1/2 left-3 -translate-y-1/2 z-10 text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center  rounded-full">
+      </div>
+      <div
+        class="swiper-button-next absolute top-1/2 right-3 -translate-y-1/2 z-10 text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center  rounded-full">
+      </div>
+    </div>
+
+
+
+      <!-- Paginação -->
+    <!-- Seção com carrossel de cards -->
+    <section class="mt-10 relative" id="top_10_populares">
+      <div class="top10-container container mx-auto px-4">
+        <h2 class="text-xl font-bold mb-4 text-white">Top 10 por Popularidade pelo povo</h2>
+
+        <!-- Botões de navegação -->
+        <button class="btnLeft absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50 hidden">
+          &#8249;
+        </button>
+        <button class="btnRight absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50">
+          &#8250;
+        </button>
+
+        <div class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
+          <!-- Cards -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/AttackOnTitan/attack-on-titans-final-season.webp" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Attack on Titan | 1</h3>
+          </div>
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/DeathNote/death-note-cartaz.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Death Note | 2</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/FullMetalAlchemist/fab.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">FullMetal Alchemist | 3</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/OnePunchMan/MV5BNzMwOGQ5MWItNzE3My00ZDYyLTk4NzAtZWIyYWI0NTZhYzY0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">One Punch Man | 4</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/kimetsunoyaiba/MV5BMWU1OGEwNmQtNGM3MS00YTYyLThmYmMtN2FjYzQzNzNmNTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Kimetsu no Yaiba | 5</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/SwordArtOnline/temporada-1.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Sword art online | 6</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Boku no Hero | 7</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/HxH/Hunter-x-Hunter-jpg.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">Hunter x Hunter | 8</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/Naruto/naruto_ugx9.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">Naruto | 9</h3>
+          </div>
+
+          <!-- ... repita até Anime 10 -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/TokyoGhoul/314681.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Tokyo Ghoul | 10</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 relative" id="top_10_assistidos">
+      <div class="top10-container container mx-auto px-4">
+        <h2 class="text-xl font-bold mb-4 text-white">Top 10 mais assistidos</h2>
+
+        <!-- Botões de navegação -->
+        <button  class="btnLeft absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50 hidden">
+          &#8249;
+        </button>
+        <button class="btnRight absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50">
+          &#8250;
+        </button>
+
+        <div class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
+          <!-- Cards -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/onepiece/91F49ev2SYL.jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">One Piece | 1</h3>
+          </div>
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/Naruto/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Naruto | 2</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/kimetsunoyaiba/MV5BMWU1OGEwNmQtNGM3MS00YTYyLThmYmMtN2FjYzQzNzNmNTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Demon Slayer | 3</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/AttackOnTitan/iahkvl4azc361.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Attack On Titan | 4</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">My Hero Academia | 5</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/DragonBall/81hGzFpNRXL._AC_UF1000,1000_QL80_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Dragon Ball | 6</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/HxH/tpl3hreuzps71.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Hunter x Hunter | 7</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/bleach/BLEACH16_00389b54-bedf-4012-8a95-578f6cb0576c.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">Bleach | 8</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/OnePunchMan/OPM_3rdKV_RGB_英ロゴcレイヤー分け.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">One-Punch Man | 9</h3>
+          </div>
+
+          <!-- ... repita até Anime 10 -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/Pokemon/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Pokémon | 10</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 relative" id="top_10_recomendados">
+      <div class="top10-container container mx-auto px-4">
+        <h2 class="text-xl font-bold mb-4 text-white">Top 10 Recomendados</h2>
+
+        <!-- Botões de navegação -->
+        <button class="btnLeft absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50 hidden">
+          &#8249;
+        </button>
+        <button class="btnRight absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50">
+          &#8250;
+        </button>
+
+        <div class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
+          <!-- Cards -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/FireForce/677e623ba86f041cb70e1e419d4baaac (1).jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Fire Force</h3>
+          </div>
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/BokuNoHero/boku no hero.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">My hero Academia</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/Kizumonogatari/kizumonogatari.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">KIZUMONOGATARI</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/BlackClover/9da30583992fa3027d172f8461f50323.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Black Clover</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/SoloLeveling/jbalvin-solo-leveling-cover_1024x1024.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Solo Leveling</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/TenseiShitaraNoSlime/Imagem-promocional-de-Tensei-shitara-Slime-Datta-Ken-1.webp" alt="Anime 2"   class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">That time I Got Reincarnated as a Slime</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/Mashle/5e01b938c11076651c8a1061f509b767.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">MASHLE: Magia e Músculos</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/FoodWars/food-wars-anime-S5-visual-1.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">Food Wars! Shokugeki no Soma</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/tbate/mark-my-words-tbate-anime-is-in-production-and-it-will-be-v0-wit4340w4f1b1.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">The Beginning After the End</h3>
+          </div>
+
+          <!-- ... repita até Anime 10 -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/TokyoGhoul/314681.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Tokyo Ghoul | 10</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 relative" id="viloes_mal_compreendidos">
+      <div class="top10-container container mx-auto px-4">
+        <h2 class="text-xl font-bold mb-4 text-white">Vilões mal compreendidos</h2>
+
+        <!-- Botões de navegação -->
+        <button  class="btnLeft absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50 hidden">
+          &#8249;
+        </button>
+        <button class="btnRight absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-500 text-white rounded-full w-10 h-10 flex items-center justify-center shadow hover:bg-yellow-600 disabled:opacity-50">
+          &#8250;
+        </button>
+
+        <div  class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
+          <!-- Cards -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/FullMetalAlchemist/fab.jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Fullmetal Alchemist:Brotherhood</h3>
+          </div>
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">My Hero Academia</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/Naruto/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Naruto Shippuden</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/CodeGeass/Code_Geass_R1_box_set_cover.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Code Geass</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/assassinationClassrom/epic-poster-of-assassination-classroom-2yt2j5vr68a4t4x5.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Assassination Classroom</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/AttackOnTitan/attack-on-titans-final-season.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Attack On Titan</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/DrStone/177251.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Dr.Stone</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/YuYuHakusho/0107747.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">Yu Yu Hakusho</h3>
+          </div>
+
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/SagaofTanyatheEvil/tanya.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium ">Saga of Tanya the Evil</h3>
+          </div>
+
+          <!-- ... repita até Anime 10 -->
+          <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
+            <img src="Image/jujutsunokaisen/750341.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <h3 class="text-sm mt-2 font-medium">Jujutsu Kaisen</h3>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+
+
   <!-- Footer sempre no final -->
-  <footer class="bg-transparent p-4 text-center text-gray-500">
-    Feito por Thiago ✨
-  </footer>
+  <footer class="bg-transparent text-white px-6 py-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+    <!-- Navegação -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">Navegação</h2>
+      <ul class="space-y-2">
+        <li><a href="#top_10_populares" class="hover:text-yellow-500">Top 10 Populares</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Séries em Simulcast</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Calendário de Lançamentos</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Notícias</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Games</a></li>
+      </ul>
+    </div>
+
+    <!-- Contato -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">Contate-nos</h2>
+      <ul class="space-y-3">
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>YouTube</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>Facebook</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>X</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>Instagram</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>TikTok</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Institucional -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">RaijinX</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-500">Sobre</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Centro de Ajuda</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Termos de Uso</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Política de Privacidade</a></li>
+        <li><button class="hover:text-yellow-500">Consentimento de Cookies</button></li>
+        <li><a href="#" class="hover:text-yellow-500">Solicitações de Imprensa</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Publicidade</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Resgatar Código</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Vagas</a></li>
+      </ul>
+    </div>
+
+    <!-- Logo ou informações extras -->
+    <div class="flex items-center justify-center sm:justify-start">
+      <p class="text-sm text-gray-400">&copy; 2025 RaijinX. Todos os direitos reservados.</p>
+    </div>
+    
+  </div>
+</footer>
+
 
 
 <script src="js/JavaScript.js" defer></script>
