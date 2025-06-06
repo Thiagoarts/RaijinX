@@ -3,61 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clone Crunchyroll - Tailwind</title>
+  <title>RaijinX</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS (caso use o carrossel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style/style.css">
+
+  <!-- Swiper JS (deixe no final do body se preferir) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-900">
-  <!-- Header -->
-  <header class="bg-white shadow sticky top-0 z-50">
-    <div class="container mx-auto flex items-center justify-between px-4 py-3">
-      <div class="text-orange-500 text-2xl font-bold">CrunchyClone</div>
-      <nav class="hidden md:flex space-x-6">
-        <a href="#" class="hover:text-orange-500">Início</a>
-        <a href="#" class="hover:text-orange-500">Animes</a>
-        <a href="#" class="hover:text-orange-500">Mangás</a>
-        <a href="#" class="hover:text-orange-500">Simulcasts</a>
-      </nav>
-      <div class="flex items-center space-x-4">
-        <input type="text" placeholder="Buscar..." class="hidden md:block px-3 py-1 border rounded-full" />
-        <img src="https://i.pravatar.cc/32" alt="Avatar" class="w-8 h-8 rounded-full" />
-      </div>
-    </div>
-  </header>
+<body class="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('../Image/background.png');">
+  <div class="max-w-7xl mx-auto px-4">
+    <nav class="flex items-center justify-between px-6 py-4 bg-transparent shadow-lg text-yellow-400 flex-wrap">
+      <!-- Navbar aqui -->
+    </nav>
 
-  <!-- Carrossel (simulado com imagem estática) -->
-  <section class="mt-6">
-    <div class="container mx-auto px-4">
-      <div class="w-full h-60 md:h-96 bg-orange-300 rounded-xl overflow-hidden shadow">
-        <img src="https://images.unsplash.com/photo-1610033281083-1b1bbdb28e1e" alt="Destaque" class="w-full h-full object-cover" />
-      </div>
-    </div>
-  </section>
+    <div class="flex flex-col md:flex-row mt-6">
+      <!-- Menu lateral -->
+      <aside class="bg-transparent p-6 w-full md:w-64 text-yellow-500">
+        <nav class="space-y-4">
+          <a href="#" class="block hover:text-yellow-300">Sobre</a>
+          <a href="#" class="block hover:text-yellow-300">Equipe</a>
+          <a href="#" class="block hover:text-yellow-300">Notícias</a>
+          <a href="#" class="block hover:text-yellow-300">FAQ</a>
+          <a href="#" class="block hover:text-yellow-300">Contato</a>
+        </nav>
+      </aside>
 
-  <!-- Seções com cards -->
-  <section class="mt-10">
-    <div class="container mx-auto px-4">
-      <h2 class="text-xl font-bold mb-4">Mais Populares</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <!-- Card anime -->
-        <div class="bg-white rounded shadow hover:scale-105 transform transition p-2">
-          <img src="https://placehold.co/200x280?text=Anime" alt="Anime" class="rounded" />
-          <h3 class="text-sm mt-2 font-medium">Nome do Anime</h3>
+      <!-- Conteúdo principal -->
+      <main class="flex-1 p-6">
+        <h1 class="text-3xl font-bold mb-4 border-b border-yellow-500 inline-block">O que é a Raijinx News?</h1>
+        <p class="mb-6 text-gray-300">
+          A Raijinx News é sua nova fonte de informações, tecnologia e novidades do universo geek, com um toque de estilo e personalidade.
+        </p>
+
+        <!-- Imagem à direita -->
+        <div class="flex flex-col md:flex-row items-center justify-between mt-10">
+          <div class="md:w-1/2">
+            <h2 class="text-2xl font-semibold text-yellow-400 mb-2">Nossa Visão</h2>
+            <p class="text-gray-400">
+              Conectar fãs por meio de conteúdo único, com uma abordagem jovem e futurista. Raijinx representa inovação com atitude.
+            </p>
+          </div>
+          <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+            <img src="../Image/site/RaijinX.png" alt="Raijinx Personagem" class="max-w-sm w-full object-contain drop-shadow-lg" />
+          </div>
         </div>
-        <!-- Repita os cards abaixo -->
-        <div class="bg-white rounded shadow hover:scale-105 transform transition p-2">
-          <img src="https://placehold.co/200x280?text=Anime" alt="Anime" class="rounded" />
-          <h3 class="text-sm mt-2 font-medium">Outro Anime</h3>
-        </div>
-        <!-- ...adicionar mais cards -->
-      </div>
+      </main>
     </div>
-  </section>
+  </div>
 
-  <!-- Footer -->
-  <footer class="bg-white mt-16 py-6 border-t">
-    <div class="container mx-auto px-4 text-center text-sm text-gray-600">
-      © 2025 CrunchyClone. Todos os direitos reservados.
+  <script>
+    // Seu script para dropdown e menu mobile aqui, se tiver
+  </script>
+
+    <!-- Footer sempre no final -->
+  <footer class="bg-transparent text-white px-6 py-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+    <!-- Navegação -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">Navegação</h2>
+      <ul class="space-y-2">
+        <li><a href="#top_10_populares" class="hover:text-yellow-500">Top 10 Populares</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Séries em Simulcast</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Calendário de Lançamentos</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Notícias</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Games</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <!-- Contato -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">Contate-nos</h2>
+      <ul class="space-y-3">
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>YouTube</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>Facebook</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>X</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>Instagram</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>TikTok</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Institucional -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">RaijinX</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-500">Sobre</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Centro de Ajuda</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Termos de Uso</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Política de Privacidade</a></li>
+        <li><button class="hover:text-yellow-500">Consentimento de Cookies</button></li>
+        <li><a href="#" class="hover:text-yellow-500">Solicitações de Imprensa</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Publicidade</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Resgatar Código</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Vagas</a></li>
+      </ul>
+    </div>
+
+    <!-- Logo ou informações extras -->
+    <div class="flex items-center justify-center sm:justify-start">
+      <p class="text-sm text-gray-400">&copy; 2025 RaijinX. Todos os direitos reservados.</p>
+    </div>
+    
+  </div>
+</footer>
 </body>
+
 </html>
