@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supernatural Fan Page</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Swiper CSS (caso use o carrossel) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style/style.css">
+
+  <!-- Swiper JS (deixe no final do body se preferir) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-cover bg-center bg-black text-white" style="background-image: url('../Image/Series/Supernatural/Untitled-design-44.jpg');">
+
+  <!-- Navbar -->
+<nav class="flex items-center justify-between px-6 py-4 bg-black bg-opacity-80 shadow-lg text-yellow-400 flex-wrap">
+  <!-- Título -->
+  <div class="text-yellow-400 text-2xl font-bold">
+    RaijinX
+  </div>
+
+  <!-- Container do botão e busca no mobile -->
+  <div class="flex items-center space-x-3 md:hidden">
+    <!-- Barra de busca mobile -->
+    <input type="text" placeholder="Buscar..."
+      class="px-2 py-1 w-28 rounded bg-yellow-100 text-black text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+
+    <!-- Botão hamburguer -->
+    <button id="menuBtn" class="text-yellow-400 text-3xl focus:outline-none">
+      &#9776;
+    </button>
+  </div>
+
+  <!-- Menu Desktop (aparece só em telas maiores) -->
+  <div class="hidden md:flex md:items-center md:space-x-8 w-full md:w-auto mt-4 md:mt-0">
+    <ul class="flex space-x-8 items-center">
+      <li class="relative">
+  <button onclick="toggleDropdown('dropdownComics')" class="hover:text-gray-400 transition duration-300">
+    Comic List ▾
+  </button>
+  <ul id="dropdownComics"
+      class="absolute hidden text-black bg-yellow-400 mt-2 rounded-lg shadow-lg w-40 z-10">
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Drama</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Terror</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Comédia</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Ação</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Romance</a></li>
+  </ul>
+</li>
+
+<li class="relative">
+  <button onclick="toggleDropdown('dropdownSeries')" class="hover:text-gray-400 transition duration-300">
+    Séries List ▾
+  </button>
+  <ul id="dropdownSeries"
+      class="absolute hidden text-black bg-yellow-400 mt-2 rounded-lg shadow-lg w-40 z-10">
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Supernatural</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Gotham</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Stranger Things</a></li>
+  </ul>
+</li>
+
+      <li><a href="#" class="hover:text-yellow-300 transition duration-300">Popular</a></li>
+      <li><a href="#" class="hover:text-yellow-300 transition duration-300">Contact us</a></li>
+    </ul>
+
+    <!-- Barra de busca para desktop -->
+    <div class="relative ml-6">
+      <input type="text" placeholder="Buscar..."
+        class="pl-10 pr-4 py-2 rounded-lg bg-yellow-100 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+      <svg class="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600" xmlns="http://www.w3.org/2000/svg"
+        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+      </svg>
+    </div>
+  </div>
+</nav>
+
+  <!-- Overlay escuro para contraste -->
+  <div class="bg-black bg-opacity-80 min-h-screen">
+
+    <header class="text-center py-10 ">
+      <h1 class="text-4xl font-bold text-yellow-500 drop-shadow-md">Supernatural</h1>
+      <p class="text-lg text-gray-300 mt-2 italic">"Saving people. Hunting things. The family business."</p>
+    </header>
+    
+    <!-- Seção de Cards -->
+    <section class="px-4 sm:px-8 md:px-16 py-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/dean-anjo.jpeg" alt="Dean Winchester" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Dean Winchester</h2>
+          <p class="text-sm text-gray-300">O irmão mais velho. Corajoso, sarcástico e leal até o fim.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/sam-poder.jpg" alt="Sam Winchester" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Sam Winchester</h2>
+          <p class="text-sm text-gray-300">Inteligente, sensível e determinado a salvar todos.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Castiel</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Crowley</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Lúcifer</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Bobby Singer</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Ruby</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Meg masters</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Chuck Shurley</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Gariel</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">John Winchester</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Rowena Macleod</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 13 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Charlie Bradbury</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 14 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Jack Kline</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 15 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Mary Winchester</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 16 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Azazel</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 17 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">The Darkness</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+        <!-- Card 18 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Metatron</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+         <!-- Card 19 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Garth Fitzgerald IV</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+         <!-- Card 20 -->
+        <div class="bg-gray-900 bg-opacity-90 rounded-xl shadow-lg p-4">
+          <img src="../Image/Series/Supernatural/castiel-1.jpg" alt="Castiel" class="w-full h-82 object-cover rounded-md mb-4">
+          <h2 class="text-xl font-semibold text-yellow-400">Claire Novak</h2>
+          <p class="text-sm text-gray-300">Anjo leal que se junta à causa dos irmãos Winchester.</p>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+      <!-- Footer sempre no final -->
+  <footer class="bg-black bg-opacity-80 text-white px-6 py-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+    <!-- Navegação -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">Navegação</h2>
+      <ul class="space-y-2">
+        <li><a href="#top_10_populares" class="hover:text-yellow-500">Top 10 Populares</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Calendário de Lançamentos</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Notícias</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Séries</a></li>
+      </ul>
+    </div>
+
+    <!-- Contato -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">Contate-nos</h2>
+      <ul class="space-y-3">
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>YouTube</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>Facebook</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>X</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>Instagram</span></a></li>
+        <li><a href="#" target="_blank" class="flex items-center gap-2 hover:text-yellow-500"><span>TikTok</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Institucional -->
+    <div>
+      <h2 class="text-lg font-semibold mb-4">RaijinX</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-500">Sobre</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Centro de Ajuda</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Termos de Uso</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Política de Privacidade</a></li>
+        <li><button class="hover:text-yellow-500">Consentimento de Cookies</button></li>
+        <li><a href="#" class="hover:text-yellow-500">Solicitações de Imprensa</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Publicidade</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Resgatar Código</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Vagas</a></li>
+      </ul>
+    </div>
+
+    <!-- Logo ou informações extras -->
+    <div class="flex items-center justify-center sm:justify-start">
+      <p class="text-sm text-gray-400">&copy; 2025 RaijinX. Todos os direitos reservados.</p>
+    </div>
+    
+  </div>
+</footer>
+
+<script src="../js/JavaScript.js" defer></script>
+</body>
+</html>

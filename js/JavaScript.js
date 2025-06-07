@@ -1,16 +1,24 @@
-// Dropdown menu por clique
-function toggleDropdown() {
-  const menu = document.getElementById("dropdownMenu");
-  menu.classList.toggle("hidden");
-}
+ function toggleDropdown(menuId) {
+    // Fecha todos os dropdowns
+    const allMenus = document.querySelectorAll('ul[id^="dropdown"]');
+    allMenus.forEach(menu => {
+      if (menu.id !== menuId) {
+        menu.classList.add('hidden');
+      }
+    });
 
-// Fecha o dropdown se clicar fora
-window.addEventListener("click", function (e) {
-  const button = e.target.closest("button");
-  if (!e.target.closest("li") || (button && !button.onclick)) {
-    document.getElementById("dropdownMenu")?.classList.add("hidden");
+    // Alterna o menu clicado
+    const menu = document.getElementById(menuId);
+    menu.classList.toggle('hidden');
   }
-});
+
+  // Fecha dropdowns ao clicar fora
+  window.addEventListener('click', function (e) {
+    if (!e.target.closest('li.relative')) {
+      const dropdowns = document.querySelectorAll('ul[id^="dropdown"]');
+      dropdowns.forEach(menu => menu.classList.add('hidden'));
+    }
+  });
 
 // MENU MOBILE
 const menuBtn = document.getElementById("menuBtn");

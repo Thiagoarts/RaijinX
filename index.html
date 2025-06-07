@@ -19,7 +19,7 @@
 
 <body class="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('Image/background.png');">
 
-  <!-- Navbar -->
+ 
 <!-- Navbar -->
 <nav class="flex items-center justify-between px-6 py-4 bg-transparent shadow-lg text-yellow-400 flex-wrap">
   <!-- Título -->
@@ -43,19 +43,31 @@
   <div class="hidden md:flex md:items-center md:space-x-8 w-full md:w-auto mt-4 md:mt-0">
     <ul class="flex space-x-8 items-center">
       <li class="relative">
-        <button onclick="toggleDropdown()" class="hover:text-gray-400 transition duration-300">
-          Comic List ▾
-        </button>
-        <ul id="dropdownMenu"
-          class="absolute hidden text-black bg-yellow-400 mt-2 rounded-lg shadow-lg w-40 z-10">
-          <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Drama</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Terror</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Comédia</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Ação</a></li>
-          <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Romance</a></li>
-        </ul>
-      </li>
-      <li><a href="#" class="hover:text-yellow-300 transition duration-300">Games</a></li>
+  <button onclick="toggleDropdown('dropdownComics')" class="hover:text-gray-400 transition duration-300">
+    Comic List ▾
+  </button>
+  <ul id="dropdownComics"
+      class="absolute hidden text-black bg-yellow-400 mt-2 rounded-lg shadow-lg w-40 z-10">
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Drama</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Terror</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Comédia</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Ação</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Romance</a></li>
+  </ul>
+</li>
+
+<li class="relative">
+  <button onclick="toggleDropdown('dropdownSeries')" class="hover:text-gray-400 transition duration-300">
+    Séries List ▾
+  </button>
+  <ul id="dropdownSeries"
+      class="absolute hidden text-black bg-yellow-400 mt-2 rounded-lg shadow-lg w-40 z-10">
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Supernatural</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Gotham</a></li>
+    <li><a href="#" class="block px-4 py-2 hover:bg-gray-400">Stranger Things</a></li>
+  </ul>
+</li>
+
       <li><a href="#" class="hover:text-yellow-300 transition duration-300">Popular</a></li>
       <li><a href="#" class="hover:text-yellow-300 transition duration-300">Contact us</a></li>
     </ul>
@@ -95,13 +107,13 @@
     <div class="swiper mySwiper mt-8 w-full max-w-7xl mx-auto rounded-xl overflow-hidden relative aspect-[16/9]">
       <div class="swiper-wrapper h-full">
         <div class="swiper-slide h-full">
-          <img src="Image/tbate/crunch.png" class="w-full h-full object-cover" />
+          <img src="Image/Animes/tbate/crunch.png" class="w-full h-full object-cover" />
         </div>
         <div class="swiper-slide h-full">
-          <img src="Image/onepiece/banner_robin.png" class="w-full h-full object-cover" />
+          <img src="Image/Animes/onepiece/banner_robin.png" class="w-full h-full object-cover" />
         </div>
         <div class="swiper-slide h-full">
-          <img src="Image/SagaofTanyatheEvil/803896.png" class="w-full h-full object-cover" />
+          <img src="Image/Animes/SagaofTanyatheEvil/download.jpeg" class="w-full h-full object-cover" />
         </div>
       </div>
 
@@ -133,52 +145,52 @@
         <div class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
           <!-- Cards -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/AttackOnTitan/attack-on-titans-final-season.webp" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/AttackOnTitan/attack-on-titans-final-season.webp" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Attack on Titan | 1</h3>
           </div>
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/DeathNote/death-note-cartaz.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/DeathNote/death-note-cartaz.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Death Note | 2</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/FullMetalAlchemist/fab.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/FullMetalAlchemist/fab.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">FullMetal Alchemist | 3</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/OnePunchMan/MV5BNzMwOGQ5MWItNzE3My00ZDYyLTk4NzAtZWIyYWI0NTZhYzY0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/OnePunchMan/MV5BNzMwOGQ5MWItNzE3My00ZDYyLTk4NzAtZWIyYWI0NTZhYzY0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">One Punch Man | 4</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/kimetsunoyaiba/MV5BMWU1OGEwNmQtNGM3MS00YTYyLThmYmMtN2FjYzQzNzNmNTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/kimetsunoyaiba/MV5BMWU1OGEwNmQtNGM3MS00YTYyLThmYmMtN2FjYzQzNzNmNTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Kimetsu no Yaiba | 5</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/SwordArtOnline/temporada-1.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/SwordArtOnline/temporada-1.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Sword art online | 6</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Boku no Hero | 7</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/HxH/Hunter-x-Hunter-jpg.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/HxH/Hunter-x-Hunter-jpg.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">Hunter x Hunter | 8</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/Naruto/naruto_ugx9.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/Naruto/naruto_ugx9.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">Naruto | 9</h3>
           </div>
 
           <!-- ... repita até Anime 10 -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/TokyoGhoul/314681.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/TokyoGhoul/314681.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Tokyo Ghoul | 10</h3>
           </div>
         </div>
@@ -200,52 +212,52 @@
         <div class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
           <!-- Cards -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/onepiece/91F49ev2SYL.jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/onepiece/91F49ev2SYL.jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">One Piece | 1</h3>
           </div>
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/Naruto/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/Naruto/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Naruto | 2</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/kimetsunoyaiba/MV5BMWU1OGEwNmQtNGM3MS00YTYyLThmYmMtN2FjYzQzNzNmNTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/kimetsunoyaiba/MV5BMWU1OGEwNmQtNGM3MS00YTYyLThmYmMtN2FjYzQzNzNmNTE0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Demon Slayer | 3</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/AttackOnTitan/iahkvl4azc361.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/AttackOnTitan/iahkvl4azc361.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Attack On Titan | 4</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">My Hero Academia | 5</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/DragonBall/81hGzFpNRXL._AC_UF1000,1000_QL80_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/DragonBall/81hGzFpNRXL._AC_UF1000,1000_QL80_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Dragon Ball | 6</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/HxH/tpl3hreuzps71.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/HxH/tpl3hreuzps71.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Hunter x Hunter | 7</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/bleach/BLEACH16_00389b54-bedf-4012-8a95-578f6cb0576c.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/bleach/BLEACH16_00389b54-bedf-4012-8a95-578f6cb0576c.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">Bleach | 8</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/OnePunchMan/OPM_3rdKV_RGB_英ロゴcレイヤー分け.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/OnePunchMan/OPM_3rdKV_RGB_英ロゴcレイヤー分け.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">One-Punch Man | 9</h3>
           </div>
 
           <!-- ... repita até Anime 10 -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/Pokemon/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/Pokemon/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Pokémon | 10</h3>
           </div>
         </div>
@@ -267,52 +279,52 @@
         <div class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
           <!-- Cards -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/FireForce/677e623ba86f041cb70e1e419d4baaac (1).jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/FireForce/677e623ba86f041cb70e1e419d4baaac (1).jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Fire Force</h3>
           </div>
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/BokuNoHero/boku no hero.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/BokuNoHero/boku no hero.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">My hero Academia</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/Kizumonogatari/kizumonogatari.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/Kizumonogatari/kizumonogatari.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">KIZUMONOGATARI</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/BlackClover/9da30583992fa3027d172f8461f50323.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/BlackClover/9da30583992fa3027d172f8461f50323.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Black Clover</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/SoloLeveling/jbalvin-solo-leveling-cover_1024x1024.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/SoloLeveling/jbalvin-solo-leveling-cover_1024x1024.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Solo Leveling</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/TenseiShitaraNoSlime/Imagem-promocional-de-Tensei-shitara-Slime-Datta-Ken-1.webp" alt="Anime 2"   class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/TenseiShitaraNoSlime/Imagem-promocional-de-Tensei-shitara-Slime-Datta-Ken-1.webp" alt="Anime 2"   class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">That time I Got Reincarnated as a Slime</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/Mashle/5e01b938c11076651c8a1061f509b767.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/Mashle/5e01b938c11076651c8a1061f509b767.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">MASHLE: Magia e Músculos</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/FoodWars/food-wars-anime-S5-visual-1.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/FoodWars/food-wars-anime-S5-visual-1.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">Food Wars! Shokugeki no Soma</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/tbate/mark-my-words-tbate-anime-is-in-production-and-it-will-be-v0-wit4340w4f1b1.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/tbate/mark-my-words-tbate-anime-is-in-production-and-it-will-be-v0-wit4340w4f1b1.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">The Beginning After the End</h3>
           </div>
 
           <!-- ... repita até Anime 10 -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/TokyoGhoul/314681.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/TokyoGhoul/314681.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Tokyo Ghoul | 10</h3>
           </div>
         </div>
@@ -334,52 +346,52 @@
         <div  class="carousel flex space-x-4 overflow-x-auto scrollbar-hide pb-2 scroll-smooth">
           <!-- Cards -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/FullMetalAlchemist/fab.jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/FullMetalAlchemist/fab.jpg" width="200"  alt="Anime 1" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Fullmetal Alchemist:Brotherhood</h3>
           </div>
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/BokuNoHero/sexta-temporada-boku-no-hero-723x1024.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">My Hero Academia</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/Naruto/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/Naruto/MV5BNTk3MDA1ZjAtNTRhYS00YzNiLTgwOGEtYWRmYTQ3NjA0NTAwXkEyXkFqcGc@._V1_.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Naruto Shippuden</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/CodeGeass/Code_Geass_R1_box_set_cover.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/CodeGeass/Code_Geass_R1_box_set_cover.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Code Geass</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/assassinationClassrom/epic-poster-of-assassination-classroom-2yt2j5vr68a4t4x5.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/assassinationClassrom/epic-poster-of-assassination-classroom-2yt2j5vr68a4t4x5.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Assassination Classroom</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/AttackOnTitan/attack-on-titans-final-season.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/AttackOnTitan/attack-on-titans-final-season.webp" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Attack On Titan</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/DrStone/177251.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/DrStone/177251.jpg" alt="Anime 2" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Dr.Stone</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/YuYuHakusho/0107747.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/YuYuHakusho/0107747.webp" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">Yu Yu Hakusho</h3>
           </div>
 
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/SagaofTanyatheEvil/tanya.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/SagaofTanyatheEvil/tanya.jpg" alt="Anime 2" width="200" height="280" class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium ">Saga of Tanya the Evil</h3>
           </div>
 
           <!-- ... repita até Anime 10 -->
           <div class="min-w-[160px] md:min-w-[200px] flex-shrink-0 bg-white rounded shadow hover:scale-105 transform transition p-2">
-            <img src="Image/jujutsunokaisen/750341.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
+            <img src="Image/Animes/jujutsunokaisen/750341.webp" alt="Anime 10" width="200"  class="rounded w-full h-[300px] object-cover" />
             <h3 class="text-sm mt-2 font-medium">Jujutsu Kaisen</h3>
           </div>
         </div>
@@ -398,10 +410,9 @@
       <h2 class="text-lg font-semibold mb-4">Navegação</h2>
       <ul class="space-y-2">
         <li><a href="#top_10_populares" class="hover:text-yellow-500">Top 10 Populares</a></li>
-        <li><a href="#" class="hover:text-yellow-500">Séries em Simulcast</a></li>
         <li><a href="#" class="hover:text-yellow-500">Calendário de Lançamentos</a></li>
         <li><a href="#" class="hover:text-yellow-500">Notícias</a></li>
-        <li><a href="#" class="hover:text-yellow-500">Games</a></li>
+        <li><a href="#" class="hover:text-yellow-500">Séries</a></li>
       </ul>
     </div>
 
